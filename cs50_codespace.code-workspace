@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../cs50_codespace"
+		},
+		{
+			"path": "../FindMyHuman"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"stdio.h": "c",
+			"cs50.h": "c"
+		}
+	}
+}

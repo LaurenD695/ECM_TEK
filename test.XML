@@ -1,0 +1,18 @@
+<PersonInfo>
+  <Person>
+    <FirstName>John</FirstName>
+    <F_Name>Nancy</F_Name>
+    <LastName>Doe</LastName>
+    <DateOfBirth>1985-06-15</DateOfBirth>
+    <Phone>555-123-4567</Phone>
+    <SSN>111-11-1111</SSN>
+    <Email>john.doe@example.com</Email>
+    <Address>
+      <Street>123 Maple Street</Street>
+      <City>Springfield</City>
+      <State>IL</State>
+      <PostalCode>62704</PostalCode>
+      <Country>USA</Country>
+    </Address>
+  </Person>
+</PersonInfo>

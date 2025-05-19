@@ -1,0 +1,425 @@
+<?xml version="1.0" ?>
+
+<LetterData xmlns:xsi=http://www.w3.org/2001/XMLSchema-instance
+
+ xsi:noNamespaceSchemaLocation="AEOB.xsd">
+
+<Correspondence>
+
+ <JOB_NM>J217578A</JOB_NM>
+
+ <COST_CENTER>    </COST_CENTER>
+
+ <Package>
+
+  <DocType>EOB</DocType>
+
+  <DistributionType>PRINTMAIL</DistributionType>
+
+  <EnvelopeStock>ENV-301  </EnvelopeStock>
+
+  <ENV_HSEHLD_FLG>Y</ENV_HSEHLD_FLG>
+
+  <AEOB_PKG_ID></AEOB_PKG_ID>
+
+  <Record>
+
+    <PDF_ID></PDF_ID>
+
+    <Insurer>
+
+      <UniquePartnerCode>AL1</UniquePartnerCode>
+
+      <InsurerName>Blue Cross and Blue Shield of Alabama</InsurerName>
+
+      <InsurerNameShort>Blue Cross</InsurerNameShort>
+
+      <InsurerLogo>E:\xPression\xPressionLogos\BPI\AL1\</InsurerLogo>
+
+      <GroupLogo></GroupLogo>
+
+      <InsurerWeb>www.AlabamaBlue.com</InsurerWeb>
+
+      <InsurerWebLink> and sign on to myBlueCross</InsurerWebLink>
+
+      <InsurerPhone>1-800-760-6844</InsurerPhone>
+
+      <InsurerPlan>Blue Cross</InsurerPlan>
+
+      <Insurer_Fraud_URL>AlabamaBlue.com/Fraud</Insurer_Fraud_URL>
+
+      <Insurer_Fraud_Phone>1-800-824-4391</Insurer_Fraud_Phone>
+
+      <LcnseLn1>Blue Cross and Blue Shield of Alabama is an independent</LcnseLn1>
+
+      <LcnseLn2>licensee of the Blue Cross and Blue Shield Association.</LcnseLn2>
+
+      <InsurerAddress>
+
+        <InsurerAddressLine1>450 Riverchase Parkway East</InsurerAddressLine1>
+
+        <InsurerCity>Birmingham</InsurerCity>
+
+        <InsurerState>AL</InsurerState>
+
+        <InsurerZip>35244-2856</InsurerZip>
+
+        <InsurerCityStateZip>Birmingham, AL 35244-2856</InsurerCityStateZip>
+
+      </InsurerAddress>
+
+      <AppealsAddress>
+
+        <Appeals_Addr_Name>Blue Cross</Appeals_Addr_Name>
+
+        <Appeals_Addr_1>ATTN: Customer Service Appeals</Appeals_Addr_1>
+
+        <Appeals_Addr_2>P. O. Box 12185</Appeals_Addr_2>
+
+        <Appeals_City>Birmingham</Appeals_City>
+
+        <Appeals_State>AL</Appeals_State>
+
+        <Appeals_Zip>35202-2185</Appeals_Zip>
+
+        <Appeals_CityStateZip>Birmingham, AL 35202-2185</Appeals_CityStateZip>
+
+      </AppealsAddress>
+
+      <SavingsHeader>Member Discounts</SavingsHeader>
+
+      <SavingsDetailHeader>MEMBER&#010;DISCOUNTS</SavingsDetailHeader>
+
+      <AppealsDays>60</AppealsDays>
+
+    </Insurer>
+
+    <Provider>
+
+      <ProviderName>Allen Barry E</ProviderName>
+
+      <NetworkStatus>O</NetworkStatus>
+
+    </Provider>
+
+    <ContractNumber>WM11111111W</ContractNumber>
+
+    <ClaimNumber>885-128190200</ClaimNumber>
+
+    <Company>Wal*Mart Value 500 - 1000/2000/5000/10000                   </Company>
+
+    <GroupNumber>AQ 0071227-T00 3835</GroupNumber>
+
+    <PatientName>Abe Scott</PatientName>
+
+    <PayeeName>Abe Scott</PayeeName>
+
+    <Prefix>WMR</Prefix>
+
+    <BaseContractNumber>10041552W</BaseContractNumber>
+
+    <ClaimPlanCode>885</ClaimPlanCode>
+
+    <BaseClaimNumber>128190200</BaseClaimNumber>
+
+    <EOBType>Provider</EOBType>
+
+    <JobNumber>J217578A</JobNumber>
+
+    <Count>000001</Count>
+
+    <MailTo>
+
+      <MailToName>Abe Scott</MailToName>
+
+      <AddressLine1>132b S Public Sq                   </AddressLine1>
+
+      <AddressLine2>                                   </AddressLine2>
+
+      <City>Glasgow</City>
+
+      <State>KY</State>
+
+      <Zip>42141-7990</Zip>
+
+    </MailTo>
+
+    <ClaimFor>
+
+      <SubscriberName>Abe Scott</SubscriberName>
+
+      <AddressLine1>132b S Public Sq                      </AddressLine1>
+
+      <AddressLine2>                                   </AddressLine2>
+
+      <City>Glasgow</City>
+
+      <State>KY</State>
+
+      <Zip>37341-7990</Zip>
+
+      <AcreMessage>                                                                                                            </AcreMessage>
+
+      <CheckStatusMessage>                             </CheckStatusMessage>
+
+      <CheckAmt>0.00</CheckAmt>
+
+      <DivertIndicator> </DivertIndicator>
+
+    </ClaimFor>
+
+    <PlanBenefits>
+
+      <PlanType>health</PlanType>
+
+      <ServiceType>Medical</ServiceType>
+
+      <PrimCareCopay>N/A </PrimCareCopay>
+
+      <SpclstCopay>N/A </SpclstCopay>
+
+      <InsBensWeb>AlabamaBlue.com/PreventiveServices</InsBensWeb>
+
+      <DsplyCoinsSw>Y</DsplyCoinsSw>
+
+      <MemPayPct>N/A </MemPayPct>
+
+      <PlanPayPct>100%</PlanPayPct>
+
+      <DsplyDeductSw>Y</DsplyDeductSw>
+
+      <IndvDeductMax>0.00</IndvDeductMax>
+
+      <IndvDeductAppld>0.00</IndvDeductAppld>
+
+      <IndvDeductRmng>0.00</IndvDeductRmng>
+
+      <FmlyDeductMax>0.00</FmlyDeductMax>
+
+      <FmlyDeductAppld>0.00</FmlyDeductAppld>
+
+      <FmlyDeductRmng>0.00</FmlyDeductRmng>
+
+      <DsplyOOPSw>Y</DsplyOOPSw>
+
+      <IndvOOPMax>0.00</IndvOOPMax>
+
+      <IndvOOPAppld>0.00</IndvOOPAppld>
+
+      <IndvOOPRmng>0.00</IndvOOPRmng>
+
+      <FmlyOOPMax>0.00</FmlyOOPMax>
+
+      <FmlyOOPAppld>0.00</FmlyOOPAppld>
+
+      <FmlyOOPRmng>0.00</FmlyOOPRmng>
+
+      <DsplyAllInOOPSw>N</DsplyAllInOOPSw>
+
+      <AllInIndvOOPMax>0.00</AllInIndvOOPMax>
+
+      <AllInIndvOOPAppld>0.00</AllInIndvOOPAppld>
+
+      <AllInIndvOOPRmng>0.00</AllInIndvOOPRmng>
+
+      <AllInAgrgtOOPMax>0.00</AllInAgrgtOOPMax>
+
+      <AllInAgrgtOOPAppld>0.00</AllInAgrgtOOPAppld>
+
+      <AllInAgrgtOOPRmng>0.00</AllInAgrgtOOPRmng>
+
+    </PlanBenefits>
+
+    <Claim>
+
+      <Details>
+
+        <Detail>
+
+          <DateOfService>03/04/2025</DateOfService>
+
+          <TypeOfService>Diagnostic Image     </TypeOfService>
+
+          <ProcedureCode>72141    </ProcedureCode>
+
+          <SubmittedCharges>        $150.00</SubmittedCharges>
+
+          <Savings>               </Savings>
+
+          <NoncoveredCharges>        $150.00</NoncoveredCharges>
+
+          <EligibleCharge>          $0.00</EligibleCharge>
+
+          <Deductible>             </Deductible>
+
+          <CopayCoinsurance>            </CopayCoinsurance>
+
+          <CopayHeader>Copay/</CopayHeader>
+
+          <Copay>            </Copay>
+
+          <Coinsurance>            </Coinsurance>
+
+          <HRAPaid>          </HRAPaid>
+
+          <WhatMyPlanPaid>          $0.00</WhatMyPlanPaid>
+
+          <WhatMyPlanCovered>               </WhatMyPlanCovered>
+
+          <OtherInsurancePaid>               </OtherInsurancePaid>
+
+          <WhatYouOwe>        $150.00</WhatYouOwe>
+
+          <SeeNotes>01               </SeeNotes>
+
+        </Detail>
+
+        <Total>
+
+          <SubmittedCharges_Total>        $150.00</SubmittedCharges_Total>
+
+          <Savings_Total>999999999999</Savings_Total>
+
+          <NoncoveredCharges_Total>        $150.00</NoncoveredCharges_Total>
+
+          <EligibleCharge_Total>           $0.00</EligibleCharge_Total>
+
+          <Deductible_Total>999999999999</Deductible_Total>
+
+          <CopayCoinsurance_Total>999999999999</CopayCoinsurance_Total>
+
+          <Copay_Total>999999999999</Copay_Total>
+
+          <Coinsurance_Total>999999999999</Coinsurance_Total>
+
+          <HRAPaid_Total>9999999999</HRAPaid_Total>
+
+          <WhatMyPlanPaid_Total>          $0.00</WhatMyPlanPaid_Total>
+
+          <WhatMyPlanCovered_Total>999999999999</WhatMyPlanCovered_Total>
+
+          <OtherInsurancePaid_Total>999999999999</OtherInsurancePaid_Total>
+
+          <WhatYouOwe_Total>        $150.00</WhatYouOwe_Total>
+
+        </Total>
+
+      </Details>
+
+      <Notes>
+
+          <Note>
+
+<NoteType>01- THIS SERVICE WAS PROVIDED AFTER THE PATIENT'S CONTRACT COVERAGE WAS DISCONTINUED. PLEASE CONTACT YOUR PERSONNEL OFFICE OR CALL THE NUMBER ON THE BACK OF YOUR IDENTIFICATION CARD IF YOU HAVE ANY QUESTIONS CONCERNING
+
+ELIGIBILITY FOR COVERAGE. (CARC: 27 )
+
+</NoteType>
+
+          </Note>
+
+      </Notes>
+
+      <DeductOOP>
+
+          <DeductOOPMessages>
+
+            <DeductOOPMessageType />
+
+          </DeductOOPMessages>
+
+      </DeductOOP>
+
+      <FormID>
+
+          <FormMessages>
+
+            <FormMessageType />
+
+          </FormMessages>
+
+      </FormID>
+
+      <Banners>
+
+          <Banner>
+
+            <BannerType />
+
+          </Banner>
+
+      </Banners>
+
+      <Messages>
+
+        <Message>
+
+          <Type> </Type>
+
+          <Location>C:\Users\Administrator\Desktop\eob\UniversalContent\Message_1a.docx</Location>
+
+        </Message>
+
+      </Messages>
+
+    </Claim>
+
+    <Summary>
+
+      <SummaryDate>05/12/2025</SummaryDate>
+
+      <StatementDate>20250512</StatementDate>
+
+      <AdjudicationDate>20250508</AdjudicationDate>
+
+      <SummaryLineItem LineType="SubmittedCharges">
+
+        <Charges>        $150.00</Charges>
+
+        <DateSubmitted>03/04/2025</DateSubmitted>
+
+      </SummaryLineItem>
+
+      <SummaryLineItem LineType="WhatMyBCPlanPaid">
+
+        <WhatMyBCPlanPaidAmount>          $0.00</WhatMyBCPlanPaidAmount>
+
+        <DatePaid>05/12/2025</DatePaid>
+
+        <MedPlanPaid>          $0.00</MedPlanPaid>
+
+      </SummaryLineItem>
+
+      <SummaryLineItem LineType="NoncoveredCharges">
+
+        <NoncoveredCharges>        $150.00</NoncoveredCharges>
+
+      </SummaryLineItem>
+
+      <SummaryLineItem LineType="AmountOwedToProvider">
+
+        <AmountOwedToProvider>        $150.00</AmountOwedToProvider>
+
+      </SummaryLineItem>
+
+    </Summary>
+
+  </Record>
+
+  <PKG_Count>000001</PKG_Count>
+
+  <PKG_EligibleCharges>          $0.00</PKG_EligibleCharges>
+
+  <PKG_WhatMyPlanPaid>          $0.00</PKG_WhatMyPlanPaid>
+
+  <PKG_WhatYouOwe>        $150.00</PKG_WhatYouOwe>
+
+  <SrprsBilgSw>N</SrprsBilgSw>
+
+  <AccoladeSw>N</AccoladeSw>
+
+ </Package>
+
+</Correspondence>
+
+</LetterData>     ex
