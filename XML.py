@@ -2,6 +2,7 @@
 from together import Together
 import xml.etree.ElementTree as ET
 import json
+import re
 
 file_path = "/Users/laurendipalo/dev/ecm_tek/test.XML"
 def read_xml_from_file(file_path):
@@ -10,17 +11,30 @@ def read_xml_from_file(file_path):
     return xml_data
 
 client = Together()
-def generate_random_values(field_name):
+def clean_and_parse_json(llm_output):
+    # Remove Markdown-style code block if present
+    cleaned = re.sub(r"^```json\s*|\s*```$", "", llm_output.strip(), flags=re.IGNORECASE)
+    return json.loads(cleaned)
+def generate_random_values(field_names):
     response = client.chat.completions.create(
         model="marin-community/marin-8b-instruct",
         messages=[
           {
             "role": "user",
-            "content": f"Give me a random {field_name} value in a JSON object. One word only per response"
+            "content": (
+              "You are an expert at coming up with fake data. "
+              "Your job is to generate a JSON object mapping the following input field names to realistic fake values: "
+              f"{field_names}. "
+              "Return **only** a valid JSON object as plain text. "
+              "Do not include any explanations, comments, or formatting like markdown code blocks. "
+              "Just return the raw JSON."
+            )
           }
         ]
     )
-    return response.choices[0].message.content
+    return clean_and_parse_json(response.choices[0].message.content)
+
+
 
 def map_fields_to_values(xml_data, fields):
     # Parse the XML data
@@ -48,14 +62,6 @@ def map_fields_to_values(xml_data, fields):
     return field_value_dict
 
 
-def get_random_field_values(fields):
-    random_values = {}
-    for field in fields:
-        random_value = generate_random_values(field)
-        random_values[field] = random_value
-    return random_values
-
-
 def scrub_xml(xml_data, random_values_mapping):
     # Parse the XML data
     root = ET.fromstring(xml_data)
@@ -79,11 +85,11 @@ fields = ['FirstName', 'LastName', 'DateOfBirth', 'Phone', 'Email', 'Street', 'C
 
 # Step 2: Map the values from the XML data
 mapped_values = map_fields_to_values(xml_data, fields)
-print("\nMapped XML Values:")
-print(json.dumps(mapped_values, indent=2))
+# print("\nMapped XML Values:")
+# print(json.dumps(mapped_values, indent=2))
 
 # Step 3: Get a random value for each field from ChatGPT
-random_field_values = get_random_field_values(fields)
+random_field_values = generate_random_values(fields)
 print("\nRandom Values from ChatGPT:")
 print(json.dumps(random_field_values, indent=2))
 
