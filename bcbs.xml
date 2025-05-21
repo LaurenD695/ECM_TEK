@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 
-<LetterData xmlns:xsi=http://www.w3.org/2001/XMLSchema-instance
+<LetterData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 
  xsi:noNamespaceSchemaLocation="AEOB.xsd">
 
@@ -422,4 +422,4 @@ ELIGIBILITY FOR COVERAGE. (CARC: 27 )
 
 </Correspondence>
 
-</LetterData>     ex
+</LetterData>

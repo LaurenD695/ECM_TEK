@@ -13,9 +13,9 @@ parser.add_argument('fields', nargs='+', help='list of field names to scrub')
 args = parser.parse_args()
 
 file_path = args.filepath
-print(f"Filepath: {file_path}")
+# print(f"Filepath: {file_path}")
 fields = args.fields
-print(f"Fieldnames: {fields}")
+# print(f"Fieldnames: {fields}")
 
 #func: read data from XML file as a string and store in variable
 def read_xml_from_file(file_path):
@@ -104,15 +104,14 @@ def scrub_xml(xml_data, fake_data):
         for element in root.findall(f'.//{field}'):
             if element is not None:
                 element.text = value  # updates the field with the random value
-    # Convert the updated XML back to a string
     updated_xml_data = ET.tostring(root, encoding='unicode', method='xml')
     return updated_xml_data
 
 
-# Step 1: Read the XML data from the file
+# Step 1: parse xml
 xml_data = read_xml_from_file(file_path)
-print("Original XML")
-print(xml_data)
+# print("Original XML")
+# print(xml_data)
 
 # Step 2: map original XML values to dictionary
 original_values = map_xml_values(xml_data, fields)
@@ -126,13 +125,13 @@ if len(original_values) != len(args.fields):
     print(f"Original Values: {list(original_values.keys())}")
     sys.exit(1)
 
-# Step 3: Get a random value for each field from LLM/clean it up so that it is formatted properly
+# Step 3: get a random value for each field from LLM/clean it up so that it is formatted properly
 random_field_values = retry_fake_data(original_values)
 print("\nRandom Values from LLM:")
 print(json.dumps(random_field_values, indent=2))
 
 
-# Step 4: Update the XML with random values
+# Step 4: return scrubbed xml
 updated_xml_data = scrub_xml(xml_data, random_field_values)
 print("\nUpdated XML Data with Random Values:")
 print(updated_xml_data)
