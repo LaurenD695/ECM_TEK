@@ -8,16 +8,20 @@ fake = Faker()
 # generate dummy data JSON obj format
 # replace old data with dummy data
 
-#step 1: read data from XML file as a string and store in variable
+#func: read data from XML file as a string and store in variable
 file_path = "/Users/laurendipalo/dev/ecm_tek/test.XML"
 def read_xml_from_file(file_path):
-    # Add try / except here
-    with open(file_path, 'r') as f:
-        xml_data = f.read()
+    try:
+        with open(file_path, 'r') as f:
+            xml_data = f.read()
+            f.close()
+    except FileNotFoundError:
+        print("File not found")
+    except Exception as e:
+        print(f"Error: {e}")
     return xml_data
 
-#step 3: generate fake data
-
+#func: generate fake data
 def generate_random_values(fields: list[str]) -> dict[str, str]:
     return  {
         "F_name": fake.first_name(),
@@ -35,9 +39,9 @@ def generate_random_values(fields: list[str]) -> dict[str, str]:
     }
 
 
-#step 4: "scrub" document/replace data with fake data
+#func: "scrub" document/replace data with fake data
 def scrub_xml(xml_data: str, random_values: dict[str, str]):
-    # Parse the XML data
+    # Parses the XML data from a string into an element
     root = ET.fromstring(xml_data)
 
     # Loop through the random values and update the corresponding XML fields
@@ -53,6 +57,8 @@ def scrub_xml(xml_data: str, random_values: dict[str, str]):
 xml_data = read_xml_from_file(file_path)
 # List of fields to map
 fields = ['FirstName', 'LastName', 'DateOfBirth', 'SSN', 'Phone', 'Email', 'Street', 'City', 'State', 'PostalCode', 'Country']
+# Step 2: generate random values given list of fields, then use return values and plug into scrub function
+# Step 3: store scrubbed xml as updated xml (temp print statement to ensure it works, how should i return the updated file?)
 updated_xml_data = scrub_xml(xml_data, generate_random_values(fields))
 print(updated_xml_data)
 
