@@ -3,32 +3,42 @@ from together import Together
 import xml.etree.ElementTree as ET
 import json
 import re
+import argparse
+import sys
 
+
+parser = argparse.ArgumentParser()
+parser.add_argument('filepath', help='path to XML file')
+parser.add_argument('fields', nargs='+', help='list of field names to scrub')
+args = parser.parse_args()
+
+file_path = args.filepath
+print(f"Filepath: {file_path}")
+fields = args.fields
+print(f"Fieldnames: {fields}")
 
 #func: read data from XML file as a string and store in variable
-file_path = "/Users/laurendipalo/dev/ecm_tek/test.XML"
 def read_xml_from_file(file_path):
     try:
         with open(file_path, 'r') as f:
             xml_data = f.read()
-            f.close()
     except FileNotFoundError:
         print("File not found")
     except Exception as e:
-        print(f"Error{e}")
+        print(f"Error: {e}")
     return xml_data
 
-#func: map values
+#func: map values from og xml
 def map_xml_values(xml_data, fields):
     root = ET.fromstring(xml_data)
     key_values = {}
 
     def handle_nested_tags(element):
         for child in element:
-            # If the tag matches the fields list, store the value
+            # checks if child tag is found in fields -> if yes, stores value
             if child.tag in fields and child.tag not in key_values:
                 key_values[child.tag] = child.text.strip() if child.text else None
-            # If the element has children, recurse
+            # handles nested tags (i.e address -> city, state, etc)
             if len(child):
                 handle_nested_tags(child)
     handle_nested_tags(root)
@@ -36,9 +46,9 @@ def map_xml_values(xml_data, fields):
 
 #func: generate fake data using LLM passing in field names as parameter
 #problem: LLM response formatting "incorrectly" so made a function to clean up response and only extract info i need
+#working on finding a better solution than just regex-ing whenever LLM acts up
 client = Together()
 def clean_and_parse_json(llm_output):
-    # Remove Markdown-style code block if present
     cleaned = re.sub(r"^(?:```|''')\s*json\s*|^(?:```|''')\s*|\s*(?:```|''')\s*$", "", llm_output.strip(), flags=re.IGNORECASE)
     return json.loads(cleaned)
 
@@ -87,13 +97,13 @@ def determine_if_same(original_data, fake_data):
     return False
 
 def scrub_xml(xml_data, fake_data):
-    # Parse the XML data
+    # parses XML data
     root = ET.fromstring(xml_data)
     # Loop through the random values and update the corresponding XML fields
     for field, value in fake_data.items():
         for element in root.findall(f'.//{field}'):
             if element is not None:
-                element.text = value  # Update the field with the random value
+                element.text = value  # updates the field with the random value
     # Convert the updated XML back to a string
     updated_xml_data = ET.tostring(root, encoding='unicode', method='xml')
     return updated_xml_data
@@ -104,13 +114,17 @@ xml_data = read_xml_from_file(file_path)
 print("Original XML")
 print(xml_data)
 
-# List of fields to scrub
-fields = ['FirstName', 'F_Name', 'LastName', 'DateOfBirth', 'Phone', 'SSN', 'Email', 'Street', 'City', 'State', 'PostalCode']
-
 # Step 2: map original XML values to dictionary
 original_values = map_xml_values(xml_data, fields)
 print("\nMapped Original XML Values:")
 print(json.dumps(original_values, indent=2))
+
+#included check to ensure that intended number of fields were mapped
+if len(original_values) != len(args.fields):
+    print(f"[!] Error: The number of fields provided ({len(args.fields)}) does not match the number of mapped fields from XML ({len(original_values)}).")
+    print(f"Fields: {args.fields}")
+    print(f"Original Values: {list(original_values.keys())}")
+    sys.exit(1)
 
 # Step 3: Get a random value for each field from LLM/clean it up so that it is formatted properly
 random_field_values = retry_fake_data(original_values)
