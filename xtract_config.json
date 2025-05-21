@@ -1,0 +1,4 @@
+{
+  "file_path": "/Users/laurendipalo/dev/ecm_tek/test.XML",
+  "fields": ['FirstName', 'F_Name', 'LastName', 'DateOfBirth', 'Phone', 'SSN', 'Email', 'Street', 'City', 'State', 'PostalCode']
+}
